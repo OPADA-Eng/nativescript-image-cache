@@ -13,7 +13,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/theme": "~2.3.0",
-    "nativescript-image-cache": "file:../src",
+    "nativescript-image-cache-opada": "file:../src",
     "tns-core-modules": "~6.5.0"
   },
   "devDependencies": {

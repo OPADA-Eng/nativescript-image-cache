@@ -9,16 +9,16 @@ Released under the MIT License, anybody can freely include this in any type of p
 
 ## Installation
 
-    tns plugin add nativescript-image-cache
+    tns plugin add nativescript-image-cache-opada
 
-** Tested on NativeScript 2.3+ on both Angular 2 and VanillaJS, if any problems while running on previous versions, please update. This version of plugin has breaking changes, if you are using version 1.0.3 of this plugin, please migrate, it is easy to migrate and this version of plugin supports android as well , if you still prefer running on the previous version, use `tns plugin add nativescript-image-cache@1.0.3`.**
+** Tested on NativeScript 2.3+ on both Angular 2 and VanillaJS, if any problems while running on previous versions, please update. This version of plugin has breaking changes, if you are using version 1.0.3 of this plugin, please migrate, it is easy to migrate and this version of plugin supports android as well , if you still prefer running on the previous version, use `tns plugin add nativescript-image-cache-opada@1.0.3`.**
 
 ## Usage in Vue
 In `main.js`:
 
 ```js
 const Vue = require("nativescript-vue") // you already have something like this
-Vue.registerElement('WebImage', () => require('nativescript-image-cache').WebImage) // now add this
+Vue.registerElement('WebImage', () => require('nativescript-image-cache-opada').WebImage) // now add this
 ```
 
 Then in any `.vue` file:
@@ -37,7 +37,7 @@ In `app.module.ts`, or any specific module you want to use this plugin:
 
 ```typescript
 import { registerElement } from "nativescript-angular";
-registerElement("WebImage", () => require("nativescript-image-cache").WebImage);
+registerElement("WebImage", () => require("nativescript-image-cache-opada").WebImage);
 ```
 
 After initialisation, the markup tag `<WebImage></WebImage>` can be used in templates of components.
@@ -86,13 +86,13 @@ After initialisation, the markup tag `<WebImage></WebImage>` can be used in temp
 Import the module, call the method `clearCache()`  , default time is for SDWebImageCache is 7 days, and for Fresco is 60 days,  after which cache is automatically cleared.
 
 
-     import {clearCache} from "nativescript-image-cache";
+     import {clearCache} from "nativescript-image-cache-opada";
      clearCache();
 
 ### Setting custom cache purge time
 Default cache purge time can be specified in number of days.
 
-    import {setCacheLimit} from "nativescript-image-cache";
+    import {setCacheLimit} from "nativescript-image-cache-opada";
 	/* Add the code component at a a proper hook */
     var cacheLimitInDays : number = 7;
     setCacheLimit(cacheLimitInDays);
@@ -103,17 +103,17 @@ Default cache purge time can be specified in number of days.
 
 ### Initialising on android - in app.js
 
-    var imageCache = require("nativescript-image-cache");
+    var imageCache = require("nativescript-image-cache-opada");
     if (application.android) {
         application.onLaunch = function (intent) {
                 imageCache.initialize();
         };
     }
 
-After initialisation, add the namespace attribute    `xmlns:IC="nativescript-image-cache"` to the opening page tag of xml. The markup tag `<IC:WebImage></IC:WebImage>` should be used to denote images.
+After initialisation, add the namespace attribute    `xmlns:IC="nativescript-image-cache-opada"` to the opening page tag of xml. The markup tag `<IC:WebImage></IC:WebImage>` should be used to denote images.
 
 ```
-    <Page xmlns:IC="nativescript-image-cache">
+    <Page xmlns:IC="nativescript-image-cache-opada">
         <GridLayout rows='*' columns='*'>
             <IC:WebImage stretch="fill" row="0"
              col="0"  id="my-image-1" placeholder="urlToLocalPlaceholderImage"
@@ -126,7 +126,7 @@ After initialisation, add the namespace attribute    `xmlns:IC="nativescript-ima
 ### Caching the images
 
  - To the opening page tag of the xml, add
-   `xmlns:IC="nativescript-image-cache"`.
+   `xmlns:IC="nativescript-image-cache-opada"`.
  - Add the element `IC:WebImage`  with the `src` attribute set to the url just like normal image tag wherever image caching is required.   
  - `stretch` attribute can take values specified here
    -https://docs.nativescript.org/api-reference/modules/\_ui_enums_.stretch.html
@@ -138,7 +138,7 @@ After initialisation, add the namespace attribute    `xmlns:IC="nativescript-ima
  - To check if an image is loading, get the reference to the WebImage view by using `page.getViewById("myWebImage")` , and check the isLoading property (same as that of NativeScript Image isLoading property).
 
 ```
-var imageCacheModule=require("nativescript-image-cache");
+var imageCacheModule=require("nativescript-image-cache-opada");
 
 var myImage1 = page.getViewById("my-image-1"),
     isLoading = myImage1.isLoading;
@@ -150,7 +150,7 @@ var myImage1 = page.getViewById("my-image-1"),
 
 - Require the module, call the method `clearCache()`  , default time for SDWebImageCache is 7 days, and for Fresco is 60 days,  after which cache is automatically cleared.
 ```
-var imageCacheModule=require("nativescript-image-cache");
+var imageCacheModule=require("nativescript-image-cache-opada");
 imageCacheModule.clearCache();
 ```
 
@@ -158,7 +158,7 @@ imageCacheModule.clearCache();
 
 Default cache purge time can be specified in number of days.
 
-    var imageCache = require("nativescript-image-cache");
+    var imageCache = require("nativescript-image-cache-opada");
    	/* Add the code component at a a proper hook */
     var cacheLimitInDays = 7;
     imageCache.setCacheLimit(cacheLimitInDays);

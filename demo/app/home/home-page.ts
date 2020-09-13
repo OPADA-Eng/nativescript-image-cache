@@ -1,4 +1,4 @@
-import { ImageCache } from 'nativescript-image-cache';
+import { ImageCache } from 'nativescript-image-cache-opada';
 console.log(new ImageCache().message);
 /*
 In NativeScript, a file with the same name as an XML file is known as

@@ -57,12 +57,12 @@ export class Helpers {
 
         if (0 === value.indexOf(utils.RESOURCE_PREFIX)) {
           let path = value.substr(utils.RESOURCE_PREFIX.length);
-          source.fromResource(path).then(function() {
+          ImageSource.fromResource(path).then(function() {
             image.isLoading = false;
             image.nativeView.image = source.ios || source.nativeView;
           });
         } else {
-          source.fromFile(value).then(function() {
+          ImageSource.fromFile(value).then(function() {
             image.isLoading = false;
             image.nativeView.image = source.ios || source.nativeView;
           });
