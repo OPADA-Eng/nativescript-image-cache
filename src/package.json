@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-image-cache-opada",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Your awesome NativeScript plugin.",
 	"main": "image-cache",
 	"typings": "index.d.ts",
